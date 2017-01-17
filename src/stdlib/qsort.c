@@ -19,7 +19,7 @@
  * IN THE SOFTWARE.
  */
 
-/* Minor changes by Rich Felker for integration in musl, 2011-04-27. */
+/* Minor changes by Rich Felker for integration in muslim, 2011-04-27. */
 
 #include <stdint.h>
 #include <stdlib.h>

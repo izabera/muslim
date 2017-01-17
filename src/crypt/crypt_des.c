@@ -1,6 +1,6 @@
 /*
  * This version has been further modified by Rich Felker, primary author
- * and maintainer of musl libc, to remove table generation code and
+ * and maintainer of muslim libc, to remove table generation code and
  * replaced all runtime-generated constant tables with static-initialized
  * tables in the binary, in the interest of minimizing non-shareable
  * memory usage and stack size requirements.

@@ -13,7 +13,7 @@ Configuration:
   --srcdir=DIR            source directory [detected]
 
 Installation directories:
-  --prefix=PREFIX         main installation prefix [/usr/local/musl]
+  --prefix=PREFIX         main installation prefix [/usr/local/muslim]
   --exec-prefix=EPREFIX   installation prefix for executable files [PREFIX]
 
 Fine tuning of the installation directories:
@@ -32,7 +32,7 @@ Optional features:
   --enable-debug          build with debugging information [disabled]
   --enable-warnings       build with recommended warnings flags [disabled]
   --enable-visibility     use global visibility options to optimize PIC [auto]
-  --enable-wrapper=...    build given musl toolchain wrapper [auto]
+  --enable-wrapper=...    build given muslim toolchain wrapper [auto]
   --disable-shared        inhibit building shared library [enabled]
   --disable-static        inhibit building static library [enabled]
 
@@ -122,7 +122,7 @@ LDFLAGS_AUTO=
 LDFLAGS_TRY=
 OPTIMIZE_GLOBS=
 srcdir=
-prefix=/usr/local/musl
+prefix=/usr/local/muslim
 exec_prefix='$(prefix)'
 bindir='$(exec_prefix)/bin'
 libdir='$(prefix)/lib'
@@ -292,11 +292,11 @@ fi
 fi
 
 if test "$gcc_wrapper" = yes ; then
-tools="$tools obj/musl-gcc"
-tool_libs="$tool_libs lib/musl-gcc.specs"
+tools="$tools obj/muslim-gcc"
+tool_libs="$tool_libs lib/muslim-gcc.specs"
 fi
 if test "$clang_wrapper" = yes ; then
-tools="$tools obj/musl-clang obj/ld.musl-clang"
+tools="$tools obj/muslim-clang obj/ld.muslim-clang"
 fi
 
 #

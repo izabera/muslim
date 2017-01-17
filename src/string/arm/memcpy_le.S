@@ -37,7 +37,7 @@
   */
 
 /*
- * This file has been modified from the original for use in musl libc.
+ * This file has been modified from the original for use in muslim libc.
  * The main changes are: addition of .type memcpy,%function to make the
  * code safely callable from thumb mode, adjusting the return
  * instructions to be compatible with pre-thumb ARM cpus, and removal

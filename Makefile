@@ -1,5 +1,5 @@
 #
-# Makefile for musl (requires GNU make)
+# Makefile for muslim (requires GNU make)
 #
 # This is how simple every makefile should be...
 # No, I take that back - actually most should be less than half this size.
@@ -12,7 +12,7 @@ srcdir = .
 exec_prefix = /usr/local
 bindir = $(exec_prefix)/bin
 
-prefix = /usr/local/musl
+prefix = /usr/local/muslim
 includedir = $(prefix)/include
 libdir = $(prefix)/lib
 syslibdir = /lib
@@ -65,14 +65,14 @@ EMPTY_LIBS = $(EMPTY_LIB_NAMES:%=lib/lib%.a)
 CRT_LIBS = $(addprefix lib/,$(notdir $(CRT_OBJS)))
 STATIC_LIBS = lib/libc.a
 SHARED_LIBS = lib/libc.so
-TOOL_LIBS = lib/musl-gcc.specs
+TOOL_LIBS = lib/muslim-gcc.specs
 ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS) $(TOOL_LIBS)
-ALL_TOOLS = obj/musl-gcc
+ALL_TOOLS = obj/muslim-gcc
 
 WRAPCC_GCC = gcc
 WRAPCC_CLANG = clang
 
-LDSO_PATHNAME = $(syslibdir)/ld-musl-$(ARCH)$(SUBARCH).so.1
+LDSO_PATHNAME = $(syslibdir)/ld-muslim-$(ARCH)$(SUBARCH).so.1
 
 -include config.mak
 
@@ -182,11 +182,11 @@ lib/%.o: obj/crt/$(ARCH)/%.o
 lib/%.o: obj/crt/%.o
 	cp $< $@
 
-lib/musl-gcc.specs: $(srcdir)/tools/musl-gcc.specs.sh config.mak
+lib/muslim-gcc.specs: $(srcdir)/tools/muslim-gcc.specs.sh config.mak
 	sh $< "$(includedir)" "$(libdir)" "$(LDSO_PATHNAME)" > $@
 
-obj/musl-gcc: config.mak
-	printf '#!/bin/sh\nexec "$${REALGCC:-$(WRAPCC_GCC)}" "$$@" -specs "%s/musl-gcc.specs"\n' "$(libdir)" > $@
+obj/muslim-gcc: config.mak
+	printf '#!/bin/sh\nexec "$${REALGCC:-$(WRAPCC_GCC)}" "$$@" -specs "%s/muslim-gcc.specs"\n' "$(libdir)" > $@
 	chmod +x $@
 
 obj/%-clang: $(srcdir)/tools/%-clang.in config.mak
@@ -225,11 +225,11 @@ install-tools: $(ALL_TOOLS:obj/%=$(DESTDIR)$(bindir)/%)
 
 install: install-libs install-headers install-tools
 
-musl-git-%.tar.gz: .git
-	 git --git-dir=$(srcdir)/.git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ $(patsubst musl-git-%.tar.gz,%,$@)
+muslim-git-%.tar.gz: .git
+	 git --git-dir=$(srcdir)/.git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ $(patsubst muslim-git-%.tar.gz,%,$@)
 
-musl-%.tar.gz: .git
-	 git --git-dir=$(srcdir)/.git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ v$(patsubst musl-%.tar.gz,%,$@)
+muslim-%.tar.gz: .git
+	 git --git-dir=$(srcdir)/.git archive --format=tar.gz --prefix=$(patsubst %.tar.gz,%,$@)/ -o $@ v$(patsubst muslim-%.tar.gz,%,$@)
 
 endif
 

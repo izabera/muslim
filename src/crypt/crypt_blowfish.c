@@ -1,5 +1,5 @@
-/* Modified by Rich Felker in for inclusion in musl libc, based on
- * Solar Designer's second size-optimized version sent to the musl
+/* Modified by Rich Felker in for inclusion in muslim libc, based on
+ * Solar Designer's second size-optimized version sent to the muslim
  * mailing list. */
 
 /*

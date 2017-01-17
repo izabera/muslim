@@ -73,7 +73,7 @@ struct ifaddrmsg {
 #define IFA_LABEL	3
 #define IFA_BROADCAST	4
 
-/* musl */
+/* muslim */
 
 #define NETLINK_ALIGN(len)	(((len)+3) & ~3)
 #define NLMSG_DATA(nlh)		((void*)((char*)(nlh)+sizeof(struct nlmsghdr)))

@@ -975,9 +975,9 @@ static struct dso *load_library(const char *name, struct dso *needed_by)
 					prefix_len = 0;
 				}
 				char etc_ldso_path[prefix_len + 1
-					+ sizeof "/etc/ld-musl-" LDSO_ARCH ".path"];
+					+ sizeof "/etc/ld-muslim-" LDSO_ARCH ".path"];
 				snprintf(etc_ldso_path, sizeof etc_ldso_path,
-					"%.*s/etc/ld-musl-" LDSO_ARCH ".path",
+					"%.*s/etc/ld-muslim-" LDSO_ARCH ".path",
 					(int)prefix_len, prefix);
 				FILE *f = fopen(etc_ldso_path, "rbe");
 				if (f) {
@@ -1485,7 +1485,7 @@ _Noreturn void __dls3(size_t *sp)
 		}
 		argv[-1] = (void *)(argc - (argv-argv_orig));
 		if (!argv[0]) {
-			dprintf(2, "musl libc (" LDSO_ARCH ")\n"
+			dprintf(2, "muslim libc (" LDSO_ARCH ")\n"
 				"Version %s\n"
 				"Dynamic Program Loader\n"
 				"Usage: %s [options] [--] pathname%s\n",

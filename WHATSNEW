@@ -66,7 +66,7 @@ hanging), and non-default-type mutex behavior.
 added ucontext/sigcontext support in headers to facilitate building
 libgcc with dwarf2 unwind support, and possibly other low-level tools.
 
-improved musl-gcc compiler wrapper.
+improved muslim-gcc compiler wrapper.
 
 implemented many small missing functions here and there, minor header
 fixes, etc.
@@ -153,7 +153,7 @@ improved semaphore performance, and sem_wait is now interruptable by
 signals, as required by POSIX.
 
 added many compatibility and system-level interfaces, increasing the
-proportion of busybox that works with musl.
+proportion of busybox that works with muslim.
 
 
 
@@ -352,7 +352,7 @@ bug fixes:
 
 new features:
 - arm port (experimental)
-- better musl-gcc wrapper script for building against musl
+- better muslim-gcc wrapper script for building against muslim
 - added clone system call
 
 bug fixes:
@@ -508,7 +508,7 @@ compatibility:
 
 new features:
 - correct over/underflow detection (ERANGE setting) for strtod
-- new musl-gcc wrapper, specfile based, faster and more robust
+- new muslim-gcc wrapper, specfile based, faster and more robust
 - meaningful return strings for dlerror
 - new iswalpha, iswpunct, and wcwidth; sync'd to Unicode 6.1
 - towupper/towlower sync'd with Unicode 6.1
@@ -586,7 +586,7 @@ bug fixes:
 - broken mbsinit(0)
 - broken wcsncmp
 - syntax error in nextafter macro in tgmath.h
-- missing support for -pie in musl-gcc wrapper
+- missing support for -pie in muslim-gcc wrapper
 - abort could wrongly fail to terminate the program in some cases
 
 compatibility:
@@ -627,7 +627,7 @@ bug fixes:
 
 build system:
 - configure check to work around hacked-up gcc versions
-- test for old binutils that can't support musl dynamic linker
+- test for old binutils that can't support muslim dynamic linker
 
 compatibility:
 - make _GNU_SOURCE imply _LARGEFILE64_SOURCE
@@ -676,7 +676,7 @@ arm-specific bug fixes:
 
 build system:
 - only use expensive -ffloat-store cflag on archs/compilers that need it
-- make musl-gcc wrapper support -lgcc (mainly for self-hosting)
+- make muslim-gcc wrapper support -lgcc (mainly for self-hosting)
 
 
 
@@ -718,7 +718,7 @@ compatibility and headers:
 - greater C89 compatibility
 - cleaner, more-compatible public syscall.h
 - many other header fixes
-- support for compiling musl with clang/llvm
+- support for compiling muslim with clang/llvm
 
 new features:
 - sha 256/512 password hash functions in crypt
@@ -931,7 +931,7 @@ new features:
 other improvements:
 - dynamic linker path file can now use newlines to separate paths
 - math optimizations for archs with extended precision (i386)
-- musl-gcc wrapper now exposes gcc's intrinsic headers
+- muslim-gcc wrapper now exposes gcc's intrinsic headers
 - quality of rand and rand_r pseudo-random sequences
 - support for large device minor numbers (greater than 8 bits)
 - various header conformance and compatibility fixes
@@ -1548,7 +1548,7 @@ other bugs fixed:
 new features:
 - byte-based C locale
 - vdso clock_gettime on arm
-- musl-clang wrapper
+- muslim-clang wrapper
 - sh2 nommu target support
 
 performance:
